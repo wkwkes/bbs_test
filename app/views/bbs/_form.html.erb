@@ -1,0 +1,28 @@
+<%= form_with(model: bb, local: true) do |form| %>
+  <% if bb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bb.errors.count, "error") %> prohibited this bb from being saved:</h2>
+
+      <ul>
+      <% bb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "名前" %>
+    <%= form.text_field :name, id: :bb_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "本文" %>
+    <%= form.text_area :comment, id: :bb_comment, :size => "75x8" %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit "コメント" %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%# <strong>Name:</strong> %>
+  <%= @bb.name %>
+  <%= @bb.comment %>  
+  <%= @bb.commented %>  
+</p>
+
+<%#
+<p>
+  <strong>Comment:</strong>
+
+</p>
+
+<p>
+  <strong>Commented:</strong>
+
+</p>
+%>
+<%= link_to '修正する', edit_bb_path(@bb) %> |
+<%= link_to "戻る", bbs_path %>
